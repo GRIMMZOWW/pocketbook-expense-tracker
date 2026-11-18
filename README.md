@@ -15,7 +15,14 @@ Pocketbook is a full-stack MERN personal expense tracker for recording daily inc
 It holds sample data created with `npm run seed:demo`, so reviewers can look around without registering.
 
 ## Screenshots
-Screenshots live in [docs/screenshots/](docs/screenshots/).
+Screenshots live in [docs/screenshots/](docs/screenshots/):
+- [Dashboard (Desktop)](docs/screenshots/02-dashboard.png)
+- [Dashboard (Mobile)](docs/screenshots/01-mobile-dashboard.png)
+- [Transactions](docs/screenshots/03-transactions.png)
+- [Analytics](docs/screenshots/04-analytics.png)
+- [Accounts](docs/screenshots/05-accounts.png)
+- [Budgets](docs/screenshots/06-budgets.png)
+- [Goals](docs/screenshots/07-goals.png)
 
 ## Features
 - **Authentication**: Register, log in, and log out with bcrypt-hashed passwords and 1-day JWT Bearer tokens. Registering creates a default `Cash` account.
