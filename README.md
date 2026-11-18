@@ -8,6 +8,12 @@ Pocketbook is a full-stack MERN personal expense tracker for recording daily inc
 
 > The backend runs on a free host. The first request after a quiet period can take about a minute.
 
+## Demo Account
+- **Email**: `demo@pocketbook.dev`
+- **Password**: `Demo@1234`
+
+It holds sample data created with `npm run seed:demo`, so reviewers can look around without registering.
+
 ## Screenshots
 Screenshots live in [docs/screenshots/](docs/screenshots/).
 
@@ -82,7 +88,12 @@ Screenshots live in [docs/screenshots/](docs/screenshots/).
    Client (`client/.env`):
    - `VITE_API_URL` (e.g. `http://localhost:5000/api`)
 
-3. **Run locally**
+3. **Seed demo data (optional)**
+   ```bash
+   cd server && npm run seed:demo
+   ```
+
+4. **Run locally**
    ```bash
    # Terminal 1 (API)
    cd server && npm run dev
