@@ -2,6 +2,7 @@ import { Paperclip, Pencil, Trash2 } from 'lucide-react';
 import api from '../api/client';
 import { CategoryIcon } from '../utils/categories';
 import { formatMoney } from '../utils/currency';
+import { formatDate } from '../utils/date';
 
 export default function TransactionRow({ tx, onEdit, onDelete }) {
   async function openAttachment() {
@@ -24,7 +25,7 @@ export default function TransactionRow({ tx, onEdit, onDelete }) {
             </span>
           </div>
           <div className="text-muted">
-            {tx.date?.slice(0, 10)} · {tx.account?.name || 'Account'}
+            {formatDate(tx.date)} · {tx.account?.name || 'Account'}
             {tx.note ? ` · ${tx.note}` : ''}
           </div>
         </div>

@@ -6,6 +6,8 @@ const MONTH_NAMES = ['January', 'February', 'March', 'April', 'May', 'June', 'Ju
 
 const oid = (id) => new mongoose.Types.ObjectId(id);
 const round = (n) => Math.round(n * 100) / 100;
+const formatMoney = (n) =>
+  `${CURRENCY}${Math.abs(round(n)).toLocaleString('en-IN', { minimumFractionDigits: 0, maximumFractionDigits: 2 })}`;
 const currentMonth = () => new Date().toISOString().slice(0, 7);
 
 // "2026-11" -> { from: 2026-11-01, to: 2026-12-01 (exclusive) }
@@ -42,7 +44,7 @@ function budgetStatus(budget, spent, month) {
   let message = null;
   if (percentUsed >= 100) {
     level = 'exceeded';
-    message = `${budget.category ? `${budget.category} budget exceeded` : 'Budget exceeded'} by ${CURRENCY}${round(spent - budget.amount)}.`;
+    message = `${budget.category ? `${budget.category} budget exceeded` : 'Budget exceeded'} by ${formatMoney(spent - budget.amount)}.`;
   } else if (percentUsed >= 90) {
     level = 'danger';
     message = `You have used ${whole}% of your ${label}.`;

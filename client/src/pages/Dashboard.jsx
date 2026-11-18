@@ -96,7 +96,7 @@ export default function Dashboard() {
             <BarChart data={data.chart}>
               <XAxis dataKey="month" fontSize={12} />
               <YAxis fontSize={12} />
-              <Tooltip />
+              <Tooltip formatter={(val) => formatMoney(val)} />
               <Bar dataKey="income" name="Income" fill="#15693B" radius={[4, 4, 0, 0]} />
               <Bar dataKey="expenses" name="Expenses" fill="#B91C1C" radius={[4, 4, 0, 0]} />
             </BarChart>

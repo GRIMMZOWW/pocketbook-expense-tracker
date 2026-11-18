@@ -5,6 +5,7 @@ import {
 } from 'recharts';
 import api from '../api/client';
 import { formatMoney } from '../utils/currency';
+import { formatDate, formatPeriod } from '../utils/date';
 
 const RANGES = [
   { key: 'week', label: 'Week' },
@@ -13,7 +14,7 @@ const RANGES = [
   { key: 'year', label: 'Year' },
 ];
 
-const COLORS = ['#134E4A', '#15693B', '#B45309', '#B91C1C', '#0F766E', '#4D7C0F', '#9A3412', '#334155'];
+const COLORS = ['#134E4A', '#D97706', '#2563EB', '#DC2626', '#7C3AED', '#DB2777', '#0891B2', '#475569'];
 
 export default function Analytics() {
   const [range, setRange] = useState('month');
@@ -76,7 +77,7 @@ export default function Analytics() {
             <div className="card">
               <div className="text-muted">Period</div>
               <div style={{ fontSize: 'var(--text-sm)', fontWeight: 600, marginTop: '8px' }}>
-                {data.from} to {data.to}
+                {formatPeriod(data.from, data.to)}
               </div>
             </div>
           </section>
@@ -131,7 +132,10 @@ export default function Analytics() {
                     <BarChart data={data.trend}>
                       <XAxis dataKey="label" fontSize={11} />
                       <YAxis fontSize={11} />
-                      <Tooltip formatter={(val) => formatMoney(val)} />
+                      <Tooltip
+                        formatter={(val) => formatMoney(val)}
+                        labelFormatter={(l) => (String(l).length === 10 ? formatDate(l) : l)}
+                      />
                       <Bar dataKey="income" name="Income" fill="#15693B" radius={[4, 4, 0, 0]} />
                       <Bar dataKey="expenses" name="Expenses" fill="#B91C1C" radius={[4, 4, 0, 0]} />
                     </BarChart>
