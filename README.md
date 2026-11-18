@@ -2,6 +2,15 @@
 
 Pocketbook is a full-stack MERN personal expense tracker for recording daily income and expenses, tracking account balances, setting monthly and category budgets, managing savings goals, and reviewing spending trends.
 
+## Live Demo
+- **Frontend URL**: `<add-your-vercel-url>`
+- **Backend URL**: `<add-your-render-url>`
+
+> The backend runs on a free host. The first request after a quiet period can take about a minute.
+
+## Screenshots
+Screenshots live in [docs/screenshots/](docs/screenshots/).
+
 ## Features
 - **Authentication**: Register, log in, and log out with bcrypt-hashed passwords and 1-day JWT Bearer tokens. Registering creates a default `Cash` account.
 - **Data Isolation**: Every database query filters by the logged-in user. Cross-user reads, edits, or deletes return `404`.

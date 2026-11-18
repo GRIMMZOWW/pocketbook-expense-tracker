@@ -11,11 +11,20 @@ const { notFound, errorHandler } = require('./middleware/error');
 mongoose.set('sanitizeFilter', true);
 
 const app = express();
+app.set('trust proxy', 1);
+
+const allowedOrigins = config.clientUrl
+  .split(',')
+  .map((u) => u.trim().replace(/\/+$/, ''))
+  .filter(Boolean);
 
 app.use(helmet());
 app.use(
   cors({
-    origin: config.clientUrl.split(',').map((u) => u.trim()),
+    origin: (origin, cb) => {
+      if (!origin || allowedOrigins.includes(origin.replace(/\/+$/, ''))) return cb(null, true);
+      return cb(null, false);
+    },
     exposedHeaders: ['Content-Disposition'],
   })
 );

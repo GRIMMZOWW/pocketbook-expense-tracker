@@ -7,6 +7,10 @@ async function start() {
     console.error('MONGO_URI and JWT_SECRET must be set. Copy .env.example to .env.');
     process.exit(1);
   }
+  if (config.isProduction && !process.env.CLIENT_URL) {
+    console.error('CLIENT_URL must be set in production.');
+    process.exit(1);
+  }
   await mongoose.connect(config.mongoUri);
   console.log('MongoDB connected');
   app.listen(config.port, () => console.log(`Server running on port ${config.port}`));
