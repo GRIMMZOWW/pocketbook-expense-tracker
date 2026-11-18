@@ -3,8 +3,8 @@
 Pocketbook is a full-stack MERN personal expense tracker for recording daily income and expenses, tracking account balances, setting monthly and category budgets, managing savings goals, and reviewing spending trends.
 
 ## Live Demo
-- **Frontend URL**: `<add-your-vercel-url>`
-- **Backend URL**: `<add-your-render-url>`
+- **Frontend URL**: https://pocketbook-expense-tracker.vercel.app
+- **Backend URL**: https://pocketbook-expense-tracker.onrender.com
 
 > The backend runs on a free host. The first request after a quiet period can take about a minute.
 
@@ -12,17 +12,30 @@ Pocketbook is a full-stack MERN personal expense tracker for recording daily inc
 - **Email**: `demo@pocketbook.dev`
 - **Password**: `Demo@1234`
 
-It holds sample data created with `npm run seed:demo`, so reviewers can look around without registering.
+This account holds sample data created with `npm run seed:demo`, so reviewers can look around without registering.
 
 ## Screenshots
-Screenshots live in [docs/screenshots/](docs/screenshots/):
-- [Dashboard (Desktop)](docs/screenshots/02-dashboard.png)
-- [Dashboard (Mobile)](docs/screenshots/01-mobile-dashboard.png)
-- [Transactions](docs/screenshots/03-transactions.png)
-- [Analytics](docs/screenshots/04-analytics.png)
-- [Accounts](docs/screenshots/05-accounts.png)
-- [Budgets](docs/screenshots/06-budgets.png)
-- [Goals](docs/screenshots/07-goals.png)
+
+### Dashboard
+![Dashboard](docs/screenshots/01-dashboard.png)
+
+### Transactions
+![Transactions](docs/screenshots/02-transactions.png)
+
+### Analytics
+![Analytics](docs/screenshots/03-analytics.png)
+
+### Budgets
+![Budgets](docs/screenshots/04-budgets.png)
+
+### Accounts
+![Accounts](docs/screenshots/05-accounts.png)
+
+### Goals
+![Goals](docs/screenshots/06-goals.png)
+
+### Mobile View
+![Mobile View](docs/screenshots/07-mobile.png)
 
 ## Features
 - **Authentication**: Register, log in, and log out with bcrypt-hashed passwords and 1-day JWT Bearer tokens. Registering creates a default `Cash` account.
